@@ -1,0 +1,117 @@
+body{
+    font-family: monospace;
+}
+
+table{
+    border: none;
+}
+
+h1,
+h4 {
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    background-color: #4CAF50;
+    width: 40%;
+    border-radius: 12px;
+    color: white;
+}
+
+h4 {
+    background-color:goldenrod;
+    width: 40%;
+    border-radius: 12px;
+    color: white;
+}
+
+form {
+    margin: auto;
+    padding: 10px;
+    background-color:lightgray;
+    width: 40%;
+    border-radius: 12px;
+}
+
+#salary {
+    border: none;
+    width: 245px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+#error{
+    text-align: center;
+    color:red;
+    font-size: medium;
+}
+
+#input {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+#output {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.button {
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 16px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.compute {
+    background-color: goldenrod;
+    font-family: monospace;
+    color: white;
+}
+
+.compute:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#computebutton {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.radio-button label {
+    display: inline-block;
+    background-color: goldenrod;
+    padding: 5px 15px;
+    font-family: monospace;
+    font-size: 10;
+    color: white;
+    border-radius: 8px;
+}
+
+.radio-button input[type="radio"]:checked+label {
+    background-color: #4CAF50;
+}
+
+.green{
+    color:green;
+}
+
+.red{
+    color:red;
+}
