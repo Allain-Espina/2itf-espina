@@ -45,7 +45,7 @@ class UserProfile
     }
 
     #Displays the value of each Member Variables
-    public function displayInfo($user)
+    function displayInfo($user)
     {
         echo "<strong>IGN: </strong>" . $user->getIGN() . "<br>";
         echo "<strong>User ID: </strong>" . $user->getID() . "<br>";
@@ -74,7 +74,7 @@ class UserStats extends UserProfile
     #Method to print out the value of the Child Class' Member Variable
     public function printInfo($userStats)
     {
-        echo "<br><strong>Role: </strong>" . $userStats->getRole();
+        echo "<br><br><strong>Role: </strong>" . $userStats->getRole() . "<br>";
     }
 }
 
@@ -95,14 +95,16 @@ class UserLevel extends UserStats
     }
 
     #Overloads printInfo() method of UserStats
-    public function printInfo($level)
+    function printInfo($level)
     {
+        if(is_numeric($level)){
             if ($level <= 30) {
                 echo "<br><strong>Level: </strong>" . $level . "<br>";
             }
             if ($level > 30) {
                 echo "<br><strong>Celestial Level: </strong>" . $level . "<br>";
             }
+        }
     }
 }
 
@@ -123,8 +125,10 @@ class UserStreamInfo extends UserProfile
     }
 
     #Overrides class UserStats' displayInfo method
-    public function displayInfo($user)
+    function displayInfo($user)
     {
+        echo "<strong>IGN: </strong>" . $user->getIGN() . "<br>";
+        echo "<strong>User ID: </strong>" . $user->getID() . "<br>";
         echo "<strong>Streaming Platform: </strong>" . $user->getStreamInfo() . "<br>";
     }
 }
@@ -167,7 +171,7 @@ echo "<hr>";
 echo "<strong>Child Class (UserStats): Single Level (Parent: UserProfile)</strong><br>";
 $user4->displayInfo($user4);
 $user4->printInfo($user4);
-echo "<br><br>";
+echo "<br>";
 
 $user5 = new UserStreamInfo();
 
@@ -176,7 +180,7 @@ $user5->setID(2021200388);
 $user5->setServer(5005);
 
 #Sets the value for the Multilevel Child Class' Member Variable
-$user5->setStreamInfo("Youtube");
+$user5->setStreamInfo("Twitch");
 
 #Calls the overriden displayInfo() method
 echo "<hr>";
@@ -196,16 +200,15 @@ echo "<strong>Child Class (UserLevel): Multilevel/Overload (Parent: UserStats)</
 $user6->displayInfo($user6);
 echo "<br>";
 $user6->printInfo(30);
-echo "<br>";
-echo "--------------------<br>";
+echo "<br>--------------------<br><br>";
 
 $user7 = new UserLevel("Tank");
 
-$user7->setIGN("Magnus");
+$user7->setIGN("Zx2K");
 $user7->setID(2021220390);
 $user7->setServer(7007);
 
 $user7->displayInfo($user7);
 echo "<br>";
 $user7->printInfo(60);
-echo "<br><br>";
+echo "<br>";
