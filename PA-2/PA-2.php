@@ -45,11 +45,11 @@ class UserProfile
     }
 
     #Displays the value of each Member Variables
-    function displayInfo($user)
+    public function displayInfo($user)
     {
-        echo "<strong>IGN: </strong>" . $user->getIGN() . "<br>";
-        echo "<strong>User ID: </strong>" . $user->getID() . "<br>";
-        echo "<strong>Server Code: </strong>" . $user->getServer();
+        echo "<strong>IGN: </strong>" . $this->getIGN() . "<br>";
+        echo "<strong>User ID: </strong>" . $this->getID() . "<br>";
+        echo "<strong>Server Code: </strong>" . $this->getServer();
     }
 }
 
@@ -74,7 +74,7 @@ class UserStats extends UserProfile
     #Method to print out the value of the Child Class' Member Variable
     public function printInfo($userStats)
     {
-        echo "<br><br><strong>Role: </strong>" . $userStats->getRole() . "<br>";
+        echo "<br><br><strong>Role: </strong>" . $this->getRole() . "<br>";
     }
 }
 
@@ -95,7 +95,7 @@ class UserLevel extends UserStats
     }
 
     #Overloads printInfo() method of UserStats
-    function printInfo($level)
+    public function printInfo($level)
     {
         if(is_numeric($level)){
             if ($level <= 30) {
@@ -125,11 +125,11 @@ class UserStreamInfo extends UserProfile
     }
 
     #Overrides class UserStats' displayInfo method
-    function displayInfo($user)
+    public function displayInfo($user)
     {
-        echo "<strong>IGN: </strong>" . $user->getIGN() . "<br>";
-        echo "<strong>User ID: </strong>" . $user->getID() . "<br>";
-        echo "<strong>Streaming Platform: </strong>" . $user->getStreamInfo() . "<br>";
+        echo "<strong>IGN: </strong>" . $this->getIGN() . "<br>";
+        echo "<strong>User ID: </strong>" . $this->getID() . "<br>";
+        echo "<strong>Streaming Platform: </strong>" . $this->getStreamInfo() . "<br>";
     }
 }
 
